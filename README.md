@@ -18,6 +18,7 @@ For linux system it has to be made executable before run (e.g. run command `chmo
 * python v3.6
 python packages to be installed: biopython, networkx
 (run command: `pip install biopython networkx`)
+* for Ubuntu tkinter is required (run command `sudo apt-get install python3-tk`)
 
 ## Running pyTanFinder
 

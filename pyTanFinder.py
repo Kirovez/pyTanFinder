@@ -113,14 +113,14 @@ if __name__ == "__main__":
     pars = parser.parse_args()
 
 
-    pyTanFinder(pars.fasta, prefix=pars.px,
+    pyTanFinder(pars.fasta, prefix=pars.prefix,
             do_blast=pars.no_blast==False,
                 runTRF=pars.no_runTRF==False,
                 writeHTML=pars.no_html == False,
-                minMonLength = int(pars.minM),
-                maxMonLength = int(pars.maxM),
-                minMonNum = int(pars.minMN),
-                minAbundancy = int(pars.minA),
-                trf_path = pars.tp,
-                blast_path = pars.bp,
-                make_blast = pars.mp)
+                minMonLength = int(pars.minMonLength),
+                maxMonLength = int(pars.maxMonLength),
+                minMonNum = int(pars.minMonNum),
+                minAbundancy = int(pars.minAbundancy),
+                trf_path = pars.trf_path,
+                blast_path = pars.blast_path,
+                make_blast = pars.make_blast)
