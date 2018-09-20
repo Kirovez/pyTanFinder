@@ -12,7 +12,7 @@ from distutils.spawn import find_executable
 
 class pyTanFinder():
     def __init__(self, fastaFile, minMonLength = 30, maxMonLength = 1000, minMonNum = 5, minAbundancy = 10000,
-                 prefix='XX', do_blast=True, writeHTML = True, runTRF=False,
+                 prefix='XX', do_blast=True, writeHTML = True, runTRF=True,
                  separator_in_sequence = "<*>",
                  trf_path='trf407b.dos.exe',
                  blast_path = r'F:\Progs\blast-2.2.31+\bin\blastn.exe',
