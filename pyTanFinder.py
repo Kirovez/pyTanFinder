@@ -7,6 +7,9 @@ from pathlib import Path
 import os
 from TRF_run_parse import TRF_run_parse
 from TRF_merger import TRFmerger
+from distutils.spawn import find_executable
+
+
 class pyTanFinder():
     def __init__(self, fastaFile, minMonLength = 30, maxMonLength = 1000, minMonNum = 5, minAbundancy = 10000,
                  prefix='XX', do_blast=True, writeHTML = True, runTRF=False,
@@ -64,6 +67,9 @@ class pyTanFinder():
     def __checkFileExist(self, outputFilename):
         my_file = Path(outputFilename)
         if my_file.is_file():
+            return True
+        #Check whether `name` is on PATH.
+        elif find_executable(outputFilename) is not None:
             return True
         return False
 
