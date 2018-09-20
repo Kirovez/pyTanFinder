@@ -14,9 +14,9 @@ class pyTanFinder():
     def __init__(self, fastaFile, minMonLength = 30, maxMonLength = 1000, minMonNum = 5, minAbundancy = 10000,
                  prefix='XX', do_blast=True, writeHTML = True, runTRF=True,
                  separator_in_sequence = "<*>",
-                 trf_path='trf407b.dos.exe',
-                 blast_path = r'F:\Progs\blast-2.2.31+\bin\blastn.exe',
-                 make_blast = r'F:\Progs\blast-2.2.31+\bin\makeblastdb.exe'):
+                 trf_path='./trf409.linux64',
+                 blast_path = r'blastn',
+                 make_blast = r'makeblastdb'):
         self.file_start = fastaFile
         self.minMonLength = minMonLength
         self.maxMonLength = maxMonLength
@@ -117,7 +117,6 @@ if __name__ == "__main__":
     parser.add_argument('-mp', '--make_blast', help='path to makeblastdb executable', default='blastn')
 
     pars = parser.parse_args()
-
 
     pyTanFinder(pars.fasta, prefix=pars.prefix,
             do_blast=pars.no_blast==False,
