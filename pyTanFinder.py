@@ -9,7 +9,7 @@ from TRF_run_parse import TRF_run_parse
 from TRF_merger import TRFmerger
 class pyTanFinder():
     def __init__(self, fastaFile, minMonLength = 30, maxMonLength = 1000, minMonNum = 5, minAbundancy = 10000,
-                 prefix='XX<*>', do_blast=True, writeHTML = True, runTRF=False,
+                 prefix='XX', do_blast=True, writeHTML = True, runTRF=False,
                  separator_in_sequence = "<*>",
                  trf_path='trf407b.dos.exe',
                  blast_path = r'F:\Progs\blast-2.2.31+\bin\blastn.exe',
@@ -100,8 +100,27 @@ if __name__ == "__main__":
     parser.add_argument('fasta', help='fasta file where tandem repeats will be found')
     parser.add_argument('-minM', '--minMonLength', help='minimum length for tandem repeat', default=20)
     parser.add_argument('-maxM', '--maxMonLength', help='maximum length for tandem repeat', default=2000)
+    parser.add_argument('-minMN', '--minMonNum', help='minimum number of repetitions', default=5)
+    parser.add_argument('-minA', '--minAbundancy', help='minimum abundancy of a repeat in genome, bp', default=10000)
+    parser.add_argument('-px', '--prefix', help='prefix that will be used for file and sequence names')
+    parser.add_argument('--no_blast', help='do not run blast (useful when it already was run before)', action='store_true')
+    parser.add_argument('--no_html', help='do not make html report', action='store_true')
+    parser.add_argument('--no_runTRF', help='do not run TRF (useful when it already was run before)', action='store_true')
+    parser.add_argument('-tp', '--trf_path', help='path to TRF executable', default='trf409.linux64')
+    parser.add_argument('-bp', '--blast_path', help='path to blastn executable', default='blastn')
+    parser.add_argument('-mp', '--make_blast', help='path to makeblastdb executable', default='blastn')
 
     pars = parser.parse_args()
-    print(pars.fasta, pars.minMonLength)
-    #pyTanFinder(r'F:\PycharmProjects\untitled\useful_scripts\TRF_script\SRR5938065.fasta', prefix='AePacBio',
-    #        do_blast=False, runTRF=False)
+
+
+    pyTanFinder(pars.fasta, prefix=pars.px,
+            do_blast=pars.no_blast==False,
+                runTRF=pars.no_runTRF==False,
+                writeHTML=pars.no_html == False,
+                minMonLength = int(pars.minM),
+                maxMonLength = int(pars.maxM),
+                minMonNum = int(pars.minMN),
+                minAbundancy = int(pars.minA),
+                trf_path = pars.tp,
+                blast_path = pars.bp,
+                make_blast = pars.mp)
