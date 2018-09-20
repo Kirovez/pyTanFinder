@@ -112,7 +112,7 @@ if __name__ == "__main__":
     parser.add_argument('--no_blast', help='do not run blast (useful when it already was run before)', action='store_true')
     parser.add_argument('--no_html', help='do not make html report', action='store_true')
     parser.add_argument('--no_runTRF', help='do not run TRF (useful when it already was run before)', action='store_true')
-    parser.add_argument('-tp', '--trf_path', help='path to TRF executable', default='trf409.linux64')
+    parser.add_argument('-tp', '--trf_path', help='path to TRF executable', default='./trf409.linux64')
     parser.add_argument('-bp', '--blast_path', help='path to blastn executable', default='blastn')
     parser.add_argument('-mp', '--make_blast', help='path to makeblastdb executable', default='blastn')
 

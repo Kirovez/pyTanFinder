@@ -14,9 +14,9 @@ class TRF_run_parse():
         self.separator_in_sequence = separator_in_sequence
 
     def run(self):
-
         if self.runTRF:
             cmd = r'{0} {1} 2 7 7 80 10 20 {2} -f -h -m'.format(self.trf_path, self.file_start,self.maxMonLength)
+            print(cmd)
             os.system(cmd)
 
         with open(self.name_for_trf) as fasta, open(self.outFasta, 'w') as out:
