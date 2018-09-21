@@ -69,7 +69,9 @@ class TRFmerger():
         if self.bl:
             ################make blast db#############################
             cmd = r'{0} -in {1} -dbtype nucl'.format(self.mb, self.trffasta)
+            print(cmd)
             os.system(cmd)
+            
             ################run blast#############################
             print("BLAST is running...")
             blast = NcbiblastnCommandline(self.bp, query=self.trffasta, db=self.trffasta, out=self.blast_out, outfmt=5, word_size = 11, evalue = 0.001)
@@ -132,7 +134,6 @@ class TRFmerger():
                 sequence = str(query_indexed_db[recor.id].seq)
 
                 self.progress(query_count, seq_num)
-
 
                 for HSP in recor:
                     indicator = 0
@@ -306,6 +307,6 @@ class TRFmerger():
         self.HTMLrep.writeHeaderFooter(header=False)
 
     def merge(self):
-        #self.BLAST()
-        #self.parseBLAST()
+        self.BLAST()
+        self.parseBLAST()
         self.merger()

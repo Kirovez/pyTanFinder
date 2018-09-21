@@ -38,6 +38,7 @@ class TRF_run_parse():
                     split_lin = lin.split(' ')
                     tr_number += 1  # number of the sequence
                     seq_seq = split_lin[13]  # lin[m:]  # sequence itself from start to the end
+                    #print(seq_seq)
                     s = str(tr_number)  # number of the sequence
                     Rn = split_lin[3]  # time of monomer repeats
 
@@ -45,10 +46,7 @@ class TRF_run_parse():
                                     float(Rn) >= self.minMonNum:  # length and number of repeat filter
 
                         q += 1  # showed number of sequences
-                        # print('>' + self.prefix + seq_id + self.separator_in_sequence +
-                        #       s + self.separator_in_sequence +
-                        #       str(Rn) + self.separator_in_sequence + str(
-                        #     len(seq_seq)) + '\n' + seq_seq)
+                        
                         out.write('>' + self.prefix + seq_id + self.separator_in_sequence + s + self.separator_in_sequence + str(Rn) + self.separator_in_sequence + str(
                             len(seq_seq)) + '\n' + seq_seq + '\n')
 

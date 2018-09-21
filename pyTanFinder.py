@@ -32,7 +32,7 @@ class pyTanFinder():
         self.separator_in_sequence = separator_in_sequence
         self.rootOut = "out_pyTanFinder"
 
-        self.name_for_trf = '{}.2.7.7.80.10.50.500.dat'.format(self.file_start)  # the numbers should be changed if other parametres will be used
+        self.name_for_trf = '{0}.2.7.7.80.10.20.{1}.dat'.format(self.getFileName(self.file_start), self.maxMonLength)  # the numbers should be changed if other parametres will be used
         self.outFasta = '{0}/FILTERED_tandem_repeats_{1}.fasta'.format(self.rootOut, prefix)
 
         ####merger files#####
@@ -42,7 +42,13 @@ class pyTanFinder():
         self.imgs_folder = "{0}/Clustering/imgs".format(self.outputDir)
         self.__checkPars()
         self.main()
-
+        
+    def getFileName(self,file):
+        if '/'in file:
+            return file.split('/')[-1]
+        else:
+            return file
+        
     def __checkPars(self):
         if not self.__checkFileExist(self.file_start):
             raise IOError("FASTA file was not found!")
@@ -108,13 +114,13 @@ if __name__ == "__main__":
     parser.add_argument('-maxM', '--maxMonLength', help='maximum length for tandem repeat', default=2000)
     parser.add_argument('-minMN', '--minMonNum', help='minimum number of repetitions', default=5)
     parser.add_argument('-minA', '--minAbundancy', help='minimum abundancy of a repeat in genome, bp', default=10000)
-    parser.add_argument('-px', '--prefix', help='prefix that will be used for file and sequence names')
+    parser.add_argument('-px', '--prefix', help='prefix that will be used for file and sequence names',default="XXX<*>")
     parser.add_argument('--no_blast', help='do not run blast (useful when it already was run before)', action='store_true')
     parser.add_argument('--no_html', help='do not make html report', action='store_true')
     parser.add_argument('--no_runTRF', help='do not run TRF (useful when it already was run before)', action='store_true')
     parser.add_argument('-tp', '--trf_path', help='path to TRF executable', default='./trf409.linux64')
     parser.add_argument('-bp', '--blast_path', help='path to blastn executable', default='blastn')
-    parser.add_argument('-mp', '--make_blast', help='path to makeblastdb executable', default='blastn')
+    parser.add_argument('-mp', '--make_blast', help='path to makeblastdb executable', default='makeblastdb')
 
     pars = parser.parse_args()
 
