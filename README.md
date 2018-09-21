@@ -4,7 +4,7 @@ pyTanFinder is a python tool to search tandem repeats in genomic or long-read da
 
 The program was developed in frame of the RNF grant (№17-14-01189)
 
-Our website: []()
+Our website: [Plantprotlab.com](http://plantprotlab.com/)
 ## Getting Started
 
 Download pyTanFinder from [Github repository](https://github.com/Kirovez/pyTanFinder) and proceed with installation instruction
@@ -34,31 +34,32 @@ optional arguments:
 
 **-h, --help** show this help message and exit
 
-**-minM** --minMonLength minimum length for tandem repeat
+**-minM** - minimum length for tandem repeat
 
-  -maxM MAXMONLENGTH, --maxMonLength MAXMONLENGTH
-                        maximum length for tandem repeat
-  -minMN MINMONNUM, --minMonNum MINMONNUM
-                        minimum number of repetitions
-  -minA MINABUNDANCY, --minAbundancy MINABUNDANCY
-                        minimum abundancy of a repeat in genome, bp
-  -px PREFIX, --prefix PREFIX
-                        prefix that will be used for file and sequence names
-  --no_blast            do not run blast (useful when it already was run
-                        before)
-  --no_html             do not make html report
-  --no_runTRF           do not run TRF (useful when it already was run before)
-  -tp TRF_PATH, --trf_path TRF_PATH
-                        path to TRF executable
-  -bp BLAST_PATH, --blast_path BLAST_PATH
-                        path to blastn executable
-  -mp MAKE_BLAST, --make_blast MAKE_BLAST
-                        path to makeblastdb executable
+**-maxM** - maximum length for tandem repeat
+
+**-minMN** - minimum number of repetitions
+
+**-minA** - minimum abundancy of a repeat in genome, bp
+
+**-px** - prefix that will be used for file and sequence names
+
+**--no_blast** - do not run blast (useful when it already was run before)
+
+**--no_html** - do not make html report
+
+**--no_runTRF** - do not run TRF (useful when it already was run before)
+
+**-tp** - path to TRF executable
+
+**-bp** - path to blastn executable
+
+**-mp** - path to makeblastdb executable
 
 
 ## Authors
 
-* **Ilya Kirov** 
+**Ilya Kirov** 
 
 
 ## License
