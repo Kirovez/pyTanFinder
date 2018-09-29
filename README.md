@@ -17,7 +17,7 @@ For linux system it has to be made executable before run (e.g. run command `chmo
 * blastn and makeblastdb programs. The paths to these programs can be set via `-bp` and `-mp` flags, respectively
 * python v3.6
 python packages to be installed: biopython, networkx
-(run command: `pip install biopython networkx`)
+(run command: `pip install matplotlib biopython networkx`)
 * for Ubuntu tkinter is required (run command `sudo apt-get install python3-tk`)
 
 ## Running pyTanFinder
