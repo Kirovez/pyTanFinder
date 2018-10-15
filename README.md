@@ -1,5 +1,9 @@
 # pyTanFinder
-![Alt text]()
+
+
+![pyTanFinder](https://github.com/Kirovez/pyTanFinder/blob/master/picture.png)
+
+
 pyTanFinder is a python tool to search tandem repeats in genomic or long-read data by running, parsing and processing [TandemRepeatFinder (Benson, 1999)](https://tandem.bu.edu/trf/trf.html) output
 
 The program was developed in frame of the RNF grant (№17-14-01189)
