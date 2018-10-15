@@ -4,11 +4,17 @@
 ![pyTanFinder](https://github.com/Kirovez/pyTanFinder/blob/master/picture.png)
 
 
-pyTanFinder is a python tool to search tandem repeats in genomic or long-read data by running, parsing and processing [TandemRepeatFinder (Benson, 1999)](https://tandem.bu.edu/trf/trf.html) output
+pyTanFinder is a python tool to search tandem repeats in genomic or long-read data by running, parsing and processing [TandemRepeatFinder (Benson, 1999)](https://tandem.bu.edu/trf/trf.html) output.
 
-The program was developed in frame of the RNF grant (№17-14-01189)
+The program was developed in frame of the RNF grant (№17-14-01189). Our website: [Plantprotlab.com](http://plantprotlab.com/)
 
-Our website: [Plantprotlab.com](http://plantprotlab.com/)
+
+## Pipeline
+pyTanFinder is user friendly command line tool to run TRF software and parse the results followed by clustering of similar tandem repeats. The output of this program is a fasta file of all tandem repeats and table containing unique TR sequences with the estimated abundancy in genome. In addition, pyTanFinder also genearates html report containing the histograms of distribution of TR monomer size and number of connections of each monomer into individual cluster. 
+
+![pipeline](https://github.com/Kirovez/pyTanFinder/blob/master/pipeline.png)
+
+
 ## Getting Started
 
 Download pyTanFinder from [Github repository](https://github.com/Kirovez/pyTanFinder) and proceed with installation instruction
