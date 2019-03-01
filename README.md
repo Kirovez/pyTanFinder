@@ -6,6 +6,10 @@
 
 pyTanFinder is a python tool to search tandem repeats in genomic or long-read data by running, parsing and processing [TandemRepeatFinder (Benson, 1999)](https://tandem.bu.edu/trf/trf.html) output.
 
+The pyTanFinder paper has been [published] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6302065/). Please cite:
+
+Kirov, I., Gilyok, M., Knyazev, A., & Fesenko, I. (2018). Pilot satellitome analysis of the model plant, Physcomitrellapatens, revealed a transcribed and high-copy IGS related tandem repeat. Comparative Cytogenetics, 12(4), 493.
+
 The program was developed in frame of the RNF grant (№17-14-01189). Our website: [Plantprotlab.com](http://plantprotlab.com/)
 
 
