@@ -29,6 +29,12 @@ Download pyTanFinder from [Github repository](https://github.com/Kirovez/pyTanFi
 pyTanFinder requires:
 * TRF executable file ([Can be donwload here](https://tandem.bu.edu/trf/trf.download.html)). 
 For linux system it has to be made executable before run (e.g. run command `chmod +x trf409.linux64`)
+
+```bash
+wget 'http://tandem.bu.edu/trf/downloads/trf409.linux64'
+chmod +x trf409.linux64
+```
+
 * blastn and makeblastdb programs. The paths to these programs can be set via `-bp` and `-mp` flags, respectively
 * python v3.6
 python packages to be installed: biopython, networkx
