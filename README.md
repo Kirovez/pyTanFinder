@@ -77,12 +77,27 @@ optional arguments:
 
 **-mp** - path to makeblastdb executable
 
+## NEW! 
 
+* now Docker container for pyTanFinder is available ( **Linux only!** ). Thus itis much easy to run it now without  installation of any dependencies!
+* To run pyTanFinder via Docker:
+  1. [Install Docker](https://docs.docker.com/install/)
+  2. Obtain copy of pyTanFinder image ```docker pull ilyakirov/pytanfinder2```
+  3. Go to the directory with your fasta file
+  4. Command to run docker ```docker run --name ptf1 -v $("pwd"):/data ilyakirov/pytanfinder2 /data/<YOUR SEQUENCE FILE>```
+  * Some explantaions (for example your fasta file name is **sequence.fasta** ):
+  ```docker run --name ptf1 -v $("pwd"):/data ilyakirov/pytanfinder2 /data/sequence.fasta```
+  * This command will mount your current repository ( ```$("pwd")``` ) to the Docker container folder /data . 
+  * When you run container it will now see your files in the current folder but the path to the files will be **/data/<YOUR FILE>** e.g.  /data/sequence.fasta in the example above.
+  * If you need to add some pyTanFinder arguments (e.g. prefix 'lu') you should add them in the following way (actually it is a normal way:)) 
+```docker run --name ptf1 -v $("pwd"):/data ilyakirov/pytanfinder2 -px lu /data/sequence.fasta```
+  * After this step the pyTanFinder will start to work. **BUT!** in the end you will **NOT** see any output files because they are insight of the container. So, you need to copy them to your folder on the computer. It can be the following command (coping in the current directory):
+  ```docker cp ptf1:/src/app/pyTanFinder/out_pyTanFinder .```
+ * After this step the results (out_pyTanFinder folder) will appear in the current folder.
+ 
+  
 ## Authors
-
 **Ilya Kirov** 
 
-
 ## License
-
 This project is licensed under the MIT License
