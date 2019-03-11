@@ -114,7 +114,7 @@ if __name__ == "__main__":
     parser.add_argument('-maxM', '--maxMonLength', help='maximum length for tandem repeat', default=2000)
     parser.add_argument('-minMN', '--minMonNum', help='minimum number of repetitions', default=5)
     parser.add_argument('-minA', '--minAbundancy', help='minimum abundancy of a repeat in genome, bp', default=10000)
-    parser.add_argument('-px', '--prefix', help='prefix that will be used for file and sequence names',default="XXX<*>")
+    parser.add_argument('-px', '--prefix', help='prefix that will be used for file and sequence names',default="XXX")
     parser.add_argument('--no_blast', help='do not run blast (useful when it already was run before)', action='store_true')
     parser.add_argument('--no_html', help='do not make html report', action='store_true')
     parser.add_argument('--no_runTRF', help='do not run TRF (useful when it already was run before)', action='store_true')
